@@ -134,20 +134,20 @@ export const CategoryManager = ({
   };
 
   const containerClasses = [
-    'bg-white shadow rounded-lg overflow-hidden',
+    'bg-white dark:bg-gray-800 shadow rounded-lg overflow-hidden',
     className
   ].filter(Boolean).join(' ');
 
   return (
     <div className={containerClasses}>
       {/* Header */}
-      <div className="px-6 py-4 border-b border-gray-200">
+      <div className="px-6 py-4 border-b border-gray-200 dark:border-gray-700">
         <div className="flex items-center justify-between">
           <div>
-            <h2 className="text-lg font-semibold text-gray-900">
+            <h2 className="text-lg font-semibold text-gray-900 dark:text-gray-100">
               Gerenciar Categorias
             </h2>
-            <p className="text-sm text-gray-600 mt-1">
+            <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
               {categories.length} {categories.length === 1 ? 'categoria' : 'categorias'} cadastradas
             </p>
           </div>
@@ -169,7 +169,7 @@ export const CategoryManager = ({
 
       {/* Search */}
       {categories.length > 0 && (
-        <div className="px-6 py-4 bg-gray-50 border-b border-gray-200">
+        <div className="px-6 py-4 bg-gray-50 dark:bg-gray-700 border-b border-gray-200 dark:border-gray-700">
           <Input
             type="text"
             placeholder="Buscar categorias..."
@@ -186,19 +186,19 @@ export const CategoryManager = ({
       )}
 
       {/* Categories List */}
-      <div className="divide-y divide-gray-200">
+      <div className="divide-y divide-gray-200 dark:divide-gray-700">
         {filteredCategories.length === 0 ? (
           <div className="px-6 py-12 text-center">
             {categories.length === 0 ? (
               // No categories at all
               <>
-                <svg className="w-12 h-12 mx-auto text-gray-400 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg className="w-12 h-12 mx-auto text-gray-400 dark:text-gray-500 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
                 </svg>
-                <h3 className="text-lg font-medium text-gray-900 mb-2">
+                <h3 className="text-lg font-medium text-gray-900 dark:text-gray-100 mb-2">
                   Nenhuma categoria cadastrada
                 </h3>
-                <p className="text-gray-600 mb-6">
+                <p className="text-gray-600 dark:text-gray-400 mb-6">
                   Crie sua primeira categoria para organizar suas transações.
                 </p>
                 <Button
@@ -212,13 +212,13 @@ export const CategoryManager = ({
             ) : (
               // No categories match search
               <>
-                <svg className="w-12 h-12 mx-auto text-gray-400 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg className="w-12 h-12 mx-auto text-gray-400 dark:text-gray-500 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                 </svg>
-                <h3 className="text-lg font-medium text-gray-900 mb-2">
+                <h3 className="text-lg font-medium text-gray-900 dark:text-gray-100 mb-2">
                   Nenhuma categoria encontrada
                 </h3>
-                <p className="text-gray-600">
+                <p className="text-gray-600 dark:text-gray-400">
                   Tente ajustar o termo de busca ou crie uma nova categoria.
                 </p>
               </>
@@ -238,10 +238,10 @@ export const CategoryManager = ({
                   
                   {/* Category Info */}
                   <div className="flex-1 min-w-0">
-                    <h3 className="text-base font-medium text-gray-900 truncate">
+                    <h3 className="text-base font-medium text-gray-900 dark:text-gray-100 truncate">
                       {category.name}
                     </h3>
-                    <div className="flex items-center space-x-2 text-sm text-gray-500">
+                    <div className="flex items-center space-x-2 text-sm text-gray-500 dark:text-gray-400">
                       <span className="font-mono">
                         {category.color.toUpperCase()}
                       </span>
@@ -300,34 +300,34 @@ export const CategoryManager = ({
       {/* Delete Confirmation Modal */}
       {deleteConfirm && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
-          <div className="bg-white rounded-lg p-6 max-w-md w-full">
+          <div className="bg-white dark:bg-gray-800 rounded-lg p-6 max-w-md w-full">
             <div className="flex items-center space-x-3 mb-4">
-              <div className="w-10 h-10 bg-danger-100 rounded-full flex items-center justify-center flex-shrink-0">
-                <svg className="w-5 h-5 text-danger-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <div className="w-10 h-10 bg-danger-100 dark:bg-danger-900 rounded-full flex items-center justify-center flex-shrink-0">
+                <svg className="w-5 h-5 text-danger-600 dark:text-danger-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 16.5c-.77.833.192 2.5 1.732 2.5z" />
                 </svg>
               </div>
               <div className="flex-1">
-                <h3 className="text-lg font-semibold text-gray-900">
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100">
                   Excluir Categoria
                 </h3>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-gray-600 dark:text-gray-400">
                   Esta ação não pode ser desfeita.
                 </p>
               </div>
             </div>
             
-            <div className="bg-gray-50 p-4 rounded-md mb-6">
+            <div className="bg-gray-50 dark:bg-gray-700 p-4 rounded-md mb-6">
               <div className="flex items-center space-x-3">
                 <ColorSwatch
                   color={deleteConfirm.color}
                   size="sm"
                 />
                 <div>
-                  <div className="font-medium text-gray-900">
+                  <div className="font-medium text-gray-900 dark:text-gray-100">
                     {deleteConfirm.name}
                   </div>
-                  <div className="text-sm text-gray-600">
+                  <div className="text-sm text-gray-600 dark:text-gray-400">
                     {/* TODO: Show transaction count */}
                     Esta categoria será removida permanentemente.
                   </div>
@@ -335,18 +335,18 @@ export const CategoryManager = ({
               </div>
             </div>
 
-            <div className="bg-yellow-50 p-4 rounded-md mb-6">
+            <div className="bg-yellow-50 dark:bg-yellow-900/20 p-4 rounded-md mb-6">
               <div className="flex items-start space-x-3">
-                <div className="w-5 h-5 bg-yellow-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <svg className="w-3 h-3 text-yellow-600" fill="currentColor" viewBox="0 0 20 20">
+                <div className="w-5 h-5 bg-yellow-100 dark:bg-yellow-800 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg className="w-3 h-3 text-yellow-600 dark:text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
                   </svg>
                 </div>
                 <div className="flex-1">
-                  <h4 className="text-sm font-medium text-yellow-800">
+                  <h4 className="text-sm font-medium text-yellow-800 dark:text-yellow-200">
                     Atenção
                   </h4>
-                  <p className="text-sm text-yellow-700 mt-1">
+                  <p className="text-sm text-yellow-700 dark:text-yellow-300 mt-1">
                     As transações que usam esta categoria ficarão sem categoria após a exclusão.
                   </p>
                 </div>

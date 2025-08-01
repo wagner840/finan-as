@@ -213,7 +213,7 @@ export interface UseLocalStorageReturn<T> {
 /**
  * Application state management types
  */
-export type AppView = 'dashboard' | 'transactions' | 'categories' | 'reports';
+export type AppView = 'dashboard' | 'transactions' | 'categories' | 'reports' | 'about' | 'privacy';
 
 export interface AppState {
   currentView: AppView;

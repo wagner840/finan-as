@@ -420,7 +420,7 @@ export function useFinanceData(): UseFinanceDataReturn {
 
   // Financial calculations
   const calculateSummary = useCallback(
-    (transactions: Transaction[]): FinancialSummary => {
+    (transactions?: Transaction[]): FinancialSummary => {
       const summary: FinancialSummary = {
         totalIncome: 0,
         totalExpenses: 0,
@@ -428,6 +428,10 @@ export function useFinanceData(): UseFinanceDataReturn {
         expensesByCategory: {},
         incomeByCategory: {},
       };
+
+      if (!transactions) {
+        return summary;
+      }
 
       transactions.forEach((transaction) => {
         if (transaction.type === "income") {

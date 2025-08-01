@@ -220,6 +220,7 @@ TextArea.displayName = 'TextArea';
 
 /**
  * Select component with dark mode support
+ * Fixed: Removed duplicate arrow issue by hiding browser default arrow
  */
 export const Select = forwardRef<HTMLSelectElement, SelectProps>(({
   label,
@@ -239,6 +240,8 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(({
     variantClasses,
     'px-3 py-2',
     loading ? 'pr-10' : 'pr-8',
+    // Remove browser default arrow
+    'appearance-none',
     props.disabled ? 'opacity-50 cursor-not-allowed bg-gray-50 dark:bg-gray-700' : '',
     className
   ].filter(Boolean).join(' ');

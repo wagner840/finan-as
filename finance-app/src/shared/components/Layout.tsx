@@ -27,6 +27,12 @@ export interface LayoutProps {
   
   /** Dark mode toggle handler */
   onToggleDarkMode?: () => void;
+  
+  /** Data export handler */
+  onExportData?: () => void;
+  
+  /** Show tutorial handler */
+  onShowTutorial?: () => void;
 }
 
 /**
@@ -64,6 +70,8 @@ export const Layout = ({
   showAds = true,
   isDark = false,
   onToggleDarkMode,
+  onExportData,
+  onShowTutorial,
 }: LayoutProps): ReactElement => {
   
   const navItems: NavItem[] = [
@@ -148,6 +156,20 @@ export const Layout = ({
                 ))}
               </nav>
               
+              {/* Tutorial Button */}
+              {onShowTutorial && (
+                <button
+                  onClick={onShowTutorial}
+                  className="p-2 rounded-md text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+                  aria-label="Mostrar tutorial"
+                  title="Tutorial - Como usar"
+                >
+                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </button>
+              )}
+
               {/* Dark Mode Toggle */}
               {onToggleDarkMode && (
                 <button
@@ -173,6 +195,19 @@ export const Layout = ({
 
             {/* Mobile menu and dark mode toggle */}
             <div className="md:hidden flex items-center space-x-2">
+              {/* Tutorial Button for Mobile */}
+              {onShowTutorial && (
+                <button
+                  onClick={onShowTutorial}
+                  className="p-2 rounded-md text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+                  aria-label="Mostrar tutorial"
+                >
+                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </button>
+              )}
+
               {/* Dark Mode Toggle for Mobile */}
               {onToggleDarkMode && (
                 <button
@@ -248,10 +283,16 @@ export const Layout = ({
             <div className="flex items-center space-x-4">
               <span>© 2024 FinançasFácil</span>
               <span className="hidden sm:inline">•</span>
-              <button className="hover:text-gray-700 dark:hover:text-gray-300 transition-colors">
+              <button 
+                onClick={() => onNavigate?.('about')}
+                className="hover:text-gray-700 dark:hover:text-gray-300 transition-colors"
+              >
                 Sobre
               </button>
-              <button className="hover:text-gray-700 dark:hover:text-gray-300 transition-colors">
+              <button 
+                onClick={() => onNavigate?.('privacy')}
+                className="hover:text-gray-700 dark:hover:text-gray-300 transition-colors"
+              >
                 Privacidade
               </button>
             </div>
@@ -261,11 +302,8 @@ export const Layout = ({
                 Versão 1.0.0
               </span>
               <button 
-                className="text-xs hover:text-gray-700 transition-colors"
-                onClick={() => {
-                  // TODO: Implement data export
-                  console.log('Export data');
-                }}
+                className="text-xs hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 transition-colors"
+                onClick={onExportData || (() => console.log('Export data - handler not provided'))}
               >
                 Exportar Dados
               </button>
@@ -284,15 +322,15 @@ export const Layout = ({
  */
 export const LayoutLoading = (): ReactElement => {
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 flex items-center justify-center">
       <div className="text-center">
         <div className="w-16 h-16 bg-primary-500 rounded-lg flex items-center justify-center mx-auto mb-4 animate-pulse">
           <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
             <path fillRule="evenodd" d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10a2 2 0 00-2-2H4zm2 6a2 2 0 012-2h8a2 2 0 012 2v4a2 2 0 01-2 2H8a2 2 0 01-2-2v-4zm6 4a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
           </svg>
         </div>
-        <h2 className="text-lg font-semibold text-gray-900 mb-2">FinançasFácil</h2>
-        <p className="text-gray-600">Carregando seus dados financeiros...</p>
+        <h2 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2">FinançasFácil</h2>
+        <p className="text-gray-600 dark:text-gray-400">Carregando seus dados financeiros...</p>
         <div className="mt-4 flex justify-center">
           <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary-500"></div>
         </div>
@@ -313,15 +351,15 @@ export interface LayoutErrorProps {
 
 export const LayoutError = ({ error, onRetry }: LayoutErrorProps): ReactElement => {
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 flex items-center justify-center">
       <div className="text-center max-w-md mx-auto px-4">
-        <div className="w-16 h-16 bg-danger-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-          <svg className="w-8 h-8 text-danger-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <div className="w-16 h-16 bg-danger-100 dark:bg-danger-900 rounded-lg flex items-center justify-center mx-auto mb-4">
+          <svg className="w-8 h-8 text-danger-600 dark:text-danger-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 16.5c-.77.833.192 2.5 1.732 2.5z" />
           </svg>
         </div>
-        <h2 className="text-lg font-semibold text-gray-900 mb-2">Algo deu errado</h2>
-        <p className="text-gray-600 mb-4">{error}</p>
+        <h2 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2">Algo deu errado</h2>
+        <p className="text-gray-600 dark:text-gray-400 mb-4">{error}</p>
         {onRetry && (
           <button
             onClick={onRetry}

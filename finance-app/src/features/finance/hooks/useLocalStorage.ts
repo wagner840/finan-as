@@ -39,19 +39,6 @@ export function useLocalStorage<T>(
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  // Check if localStorage is available
-  const isLocalStorageAvailable = useCallback((): boolean => {
-    try {
-      if (typeof window === 'undefined') return false;
-      
-      const testKey = '__localStorage_test__';
-      window.localStorage.setItem(testKey, 'test');
-      window.localStorage.removeItem(testKey);
-      return true;
-    } catch {
-      return false;
-    }
-  }, []);
 
   // Get value from localStorage
   const getStoredValue = useCallback((): T => {

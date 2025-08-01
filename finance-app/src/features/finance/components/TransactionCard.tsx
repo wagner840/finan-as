@@ -118,7 +118,7 @@ export const TransactionCard = ({
           {/* Transaction Info */}
           <div className="flex-1 min-w-0">
             <div className="flex items-start justify-between mb-1">
-              <h3 className="text-sm font-semibold text-gray-900 truncate pr-2">
+              <h3 className="text-sm font-semibold text-gray-900 dark:text-gray-100 truncate pr-2">
                 {transaction.description}
               </h3>
               <span className={`text-sm font-bold whitespace-nowrap ${amountColor}`}>
@@ -126,7 +126,7 @@ export const TransactionCard = ({
               </span>
             </div>
             
-            <div className="flex items-center space-x-2 text-xs text-gray-500">
+            <div className="flex items-center space-x-2 text-xs text-gray-500 dark:text-gray-400">
               <span>{categoryName}</span>
               <span>•</span>
               <span>{formatDate(transaction.date)}</span>
@@ -138,7 +138,7 @@ export const TransactionCard = ({
             
             {/* Timestamps for debugging (only in dev) */}
             {process.env.NODE_ENV === 'development' && (transaction.createdAt || transaction.updatedAt) && (
-              <div className="mt-1 text-xs text-gray-400">
+              <div className="mt-1 text-xs text-gray-400 dark:text-gray-500">
                 {transaction.createdAt && (
                   <span>Criado: {new Date(transaction.createdAt).toLocaleString('pt-BR')}</span>
                 )}
@@ -200,29 +200,29 @@ export const TransactionCard = ({
       {/* Delete Confirmation Modal */}
       {showDeleteConfirm && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
-          <div className="bg-white rounded-lg p-6 max-w-sm w-full">
+          <div className="bg-white dark:bg-gray-800 rounded-lg p-6 max-w-sm w-full">
             <div className="flex items-center space-x-3 mb-4">
-              <div className="w-10 h-10 bg-danger-100 rounded-full flex items-center justify-center flex-shrink-0">
-                <svg className="w-5 h-5 text-danger-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <div className="w-10 h-10 bg-danger-100 dark:bg-danger-900 rounded-full flex items-center justify-center flex-shrink-0">
+                <svg className="w-5 h-5 text-danger-600 dark:text-danger-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 16.5c-.77.833.192 2.5 1.732 2.5z" />
                 </svg>
               </div>
               <div className="flex-1">
-                <h3 className="text-lg font-semibold text-gray-900">
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100">
                   Excluir Transação
                 </h3>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-gray-600 dark:text-gray-400">
                   Esta ação não pode ser desfeita.
                 </p>
               </div>
             </div>
             
-            <div className="bg-gray-50 p-3 rounded-md mb-4">
+            <div className="bg-gray-50 dark:bg-gray-700 p-3 rounded-md mb-4">
               <div className="text-sm">
-                <div className="font-medium text-gray-900 mb-1">
+                <div className="font-medium text-gray-900 dark:text-gray-100 mb-1">
                   {transaction.description}
                 </div>
-                <div className="text-gray-600">
+                <div className="text-gray-600 dark:text-gray-400">
                   {categoryName} • {formatDate(transaction.date)}
                 </div>
                 <div className={`font-semibold ${amountColor}`}>
