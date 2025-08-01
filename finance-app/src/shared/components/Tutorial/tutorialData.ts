@@ -6,13 +6,13 @@
 import type { TutorialStep } from './TutorialModal';
 
 /**
- * Complete tutorial steps for the FinançasFácil application
+ * Complete tutorial steps for the My Finance application
  */
 export const tutorialSteps: TutorialStep[] = [
   {
     id: 'welcome',
-    title: '🎉 Bem-vindo ao FinançasFácil!',
-    content: `Parabéns por escolher o FinançasFácil para organizar suas finanças! 
+    title: '🎉 Bem-vindo ao My Finance!',
+    content: `Parabéns por escolher o My Finance para organizar suas finanças! 
 
     Nossa aplicação foi desenvolvida pensando na sua privacidade e simplicidade. Todos os seus dados ficam armazenados apenas no seu dispositivo - nada é enviado para nossos servidores.
 
@@ -27,7 +27,7 @@ export const tutorialSteps: TutorialStep[] = [
   {
     id: 'privacy-first',
     title: '🔒 Privacidade em Primeiro Lugar',
-    content: `O FinançasFácil foi projetado com foco total na sua privacidade:
+    content: `O My Finance foi projetado com foco total na sua privacidade:
 
     • **100% Local**: Todos os dados ficam no seu navegador
     • **Zero Servidores**: Não enviamos nem armazenamos seus dados
@@ -148,7 +148,7 @@ export const tutorialSteps: TutorialStep[] = [
   {
     id: 'dark-mode-settings',
     title: '🌙 Modo Escuro e Personalização',
-    content: `Personalize sua experiência com o FinançasFácil:
+    content: `Personalize sua experiência com o My Finance:
 
     • **Modo Escuro**: Alterne entre temas claro e escuro
     • **Responsivo**: Funciona perfeitamente em qualquer dispositivo

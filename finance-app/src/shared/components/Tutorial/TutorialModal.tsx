@@ -129,7 +129,7 @@ export const TutorialModal = ({
           <div className="flex items-center justify-between">
             <div>
               <h2 className="text-xl font-semibold text-gray-900 dark:text-gray-100">
-                Tutorial FinançasFácil
+                Tutorial My Finance
               </h2>
               <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
                 Passo {currentStep + 1} de {steps.length}

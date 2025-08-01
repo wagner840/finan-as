@@ -53,7 +53,7 @@ export const AboutPage = ({ onNavigate }: AboutPageProps): ReactElement => {
             </svg>
           </div>
           <h1 className="text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4">
-            FinançasFácil
+            My Finance
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto mb-8">
             O controle financeiro pessoal que respeita sua privacidade. 
@@ -91,7 +91,7 @@ export const AboutPage = ({ onNavigate }: AboutPageProps): ReactElement => {
         {/* Quick Tips */}
         <div className="mb-16">
           <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 text-center mb-8">
-            Por que escolher o FinançasFácil?
+            Por que escolher o My Finance?
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {quickTips.map((tip) => (
@@ -145,7 +145,7 @@ export const AboutPage = ({ onNavigate }: AboutPageProps): ReactElement => {
         {/* How to Use */}
         <div className="mb-16">
           <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 text-center mb-8">
-            Como Usar o FinançasFácil
+            Como Usar o My Finance
           </h2>
           <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 overflow-hidden">
             <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-gray-200 dark:divide-gray-700">

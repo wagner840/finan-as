@@ -132,7 +132,7 @@ export const Layout = ({
                 </svg>
               </div>
               <div>
-                <h1 className="text-xl font-bold text-gray-900 dark:text-gray-100">FinançasFácil</h1>
+                <h1 className="text-xl font-bold text-gray-900 dark:text-gray-100">My Finance</h1>
                 <p className="text-xs text-gray-500 dark:text-gray-400 hidden sm:block">Controle Financeiro Pessoal</p>
               </div>
             </div>
@@ -281,7 +281,7 @@ export const Layout = ({
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row items-center justify-between text-sm text-gray-500 dark:text-gray-400">
             <div className="flex items-center space-x-4">
-              <span>© 2024 FinançasFácil</span>
+              <span>© 2024 My Finance</span>
               <span className="hidden sm:inline">•</span>
               <button 
                 onClick={() => onNavigate?.('about')}
@@ -329,7 +329,7 @@ export const LayoutLoading = (): ReactElement => {
             <path fillRule="evenodd" d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10a2 2 0 00-2-2H4zm2 6a2 2 0 012-2h8a2 2 0 012 2v4a2 2 0 01-2 2H8a2 2 0 01-2-2v-4zm6 4a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
           </svg>
         </div>
-        <h2 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2">FinançasFácil</h2>
+        <h2 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2">My Finance</h2>
         <p className="text-gray-600 dark:text-gray-400">Carregando seus dados financeiros...</p>
         <div className="mt-4 flex justify-center">
           <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary-500"></div>

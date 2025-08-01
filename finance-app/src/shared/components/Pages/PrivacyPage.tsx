@@ -71,7 +71,7 @@ export const PrivacyPage = ({ onBack }: PrivacyPageProps): ReactElement => {
           </h2>
           <div className="text-center">
             <p className="text-lg text-green-700 dark:text-green-300 mb-4">
-              <strong>O FinançasFácil NUNCA coleta, armazena ou transmite seus dados financeiros.</strong>
+              <strong>O My Finance NUNCA coleta, armazena ou transmite seus dados financeiros.</strong>
             </p>
             <p className="text-green-600 dark:text-green-400">
               Todos os seus dados ficam 100% no seu dispositivo, sob seu controle total.
@@ -90,7 +90,7 @@ export const PrivacyPage = ({ onBack }: PrivacyPageProps): ReactElement => {
               </h2>
               <div className="prose prose-gray dark:prose-invert max-w-none">
                 <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                  O FinançasFácil foi desenvolvido com um princípio fundamental: 
+                  O My Finance foi desenvolvido com um princípio fundamental: 
                   <strong> sua privacidade financeira é inviolável</strong>. Esta política 
                   explica exatamente como protegemos suas informações e por que você pode 
                   confiar completamente na nossa abordagem.
@@ -409,7 +409,7 @@ export const PrivacyPage = ({ onBack }: PrivacyPageProps): ReactElement => {
             </h3>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
               Nossa promessa é simples: seus dados financeiros são seus e apenas seus. 
-              Construímos o FinançasFácil para que você tenha controle total, 
+              Construímos o My Finance para que você tenha controle total, 
               privacidade absoluta e tranquilidade completa.
             </p>
             {onBack && (

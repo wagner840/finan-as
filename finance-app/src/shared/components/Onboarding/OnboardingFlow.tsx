@@ -44,7 +44,7 @@ const WelcomeStep = ({ onNext, onSkip }: WelcomeStepProps): ReactElement => (
     
     <div>
       <h1 className="text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4">
-        Bem-vindo ao FinançasFácil! 🎉
+        Bem-vindo ao My Finance! 🎉
       </h1>
       <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
         Organize suas finanças de forma simples, segura e completamente privada. 
@@ -261,7 +261,7 @@ const QuickStart = ({ onFinish, onShowTutorial, onStartWithCategories, onBack }:
         Pronto para começar!
       </h2>
       <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-        Escolha como você quer começar a usar o FinançasFácil.
+        Escolha como você quer começar a usar o My Finance.
       </p>
     </div>
 

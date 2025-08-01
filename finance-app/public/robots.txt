@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://myfinance.app/sitemap.xml
+
+# Additional crawling instructions
+Crawl-delay: 1

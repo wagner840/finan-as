@@ -12,17 +12,17 @@ export default defineConfig({
       "myfinance.einsof7.com",
       "localhost",
       "127.0.0.1",
-      ".einsof7.com" // Permite qualquer subdomínio de einsof7.com
-    ]
+      ".einsof7.com", // Permite qualquer subdomínio de einsof7.com
+    ],
   },
   server: {
     host: "0.0.0.0",
     port: 5173,
     allowedHosts: [
       "myfinance.einsof7.com",
-      "localhost", 
+      "localhost",
       "127.0.0.1",
-      ".einsof7.com"
-    ]
+      ".einsof7.com",
+    ],
   },
 });
