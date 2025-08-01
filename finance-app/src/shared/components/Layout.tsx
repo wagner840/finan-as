@@ -281,7 +281,7 @@ export const Layout = ({
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row items-center justify-between text-sm text-gray-500 dark:text-gray-400">
             <div className="flex items-center space-x-4">
-              <span>© 2024 My Finance</span>
+              <span>© 2025 My Finance</span>
               <span className="hidden sm:inline">•</span>
               <button 
                 onClick={() => onNavigate?.('about')}

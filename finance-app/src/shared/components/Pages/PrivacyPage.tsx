@@ -27,7 +27,7 @@ export interface PrivacyPageProps {
  * ```
  */
 export const PrivacyPage = ({ onBack }: PrivacyPageProps): ReactElement => {
-  const lastUpdated = '01 de Janeiro de 2024';
+  const lastUpdated = '01 de Agosto de 2025';
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900 py-8">
